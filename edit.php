@@ -91,7 +91,7 @@ $sql = "SELECT * FROM `item` ORDER BY `id`";
 $result = mysql_query($sql) or die(mysql_error());
 while($data = mysql_fetch_assoc($result)):
 ?>
-	<img src="img/<? echo $data['bild']?>" style="position: absolute; top: <? echo $data['xpos'] - 15 ?>px; left: <? echo $data['ypos'] - 15 ?>px;visibility:hidden;"/>
+	<img src="img/<? echo $data['bild']?>" style="position: absolute; left: <? echo $data['xpos'] - 15 ?>px; top: <? echo $data['ypos'] - 15 ?>px;visibility:hidden;"/>
 <?php
 	$namen .= "'".$data['name']."',";
 	$beschreibungen .= "'".$data['beschreibung']."',";
