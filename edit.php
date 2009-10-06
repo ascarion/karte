@@ -94,7 +94,7 @@ while($data = mysql_fetch_assoc($result)):
 	<img src="img/<? echo $data['bild']?>" style="position: absolute; left: <? echo $data['xpos'] - 15 ?>px; top: <? echo $data['ypos'] - 15 ?>px;visibility:hidden;"/>
 <?php
 	$namen .= "'".$data['name']."',";
-	$beschreibungen .= "'".$data['beschreibung']."',";
+	$beschreibungen .= "'".strtr($data['beschreibung'], array("\n" => '<br />', "\r\n" =>'<br />'))."',";
 endwhile;
 ?>
 </div>

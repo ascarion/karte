@@ -17,7 +17,7 @@ $result = mysql_query($sql) or die(mysql_error());
 while($data = mysql_fetch_assoc($result)):
 ?>
 	<img src="img/<? echo $data['bild']?>" style="position: absolute; left: <? echo $data['xpos'] - 15 ?>px; top: <? echo $data['ypos'] - 15 ?>px;" 
-		onmouseover="return overlib('<?=$data['beschreibung']?>', CAPTION, '<?=$data['name']?>');" onmouseout="return nd()" />
+		onmouseover="return overlib('<?=strtr($data['beschreibung'], array("\n" => '<br />', "\r\n" =>'<br />'))?>', CAPTION, '<?=$data['name']?>');" onmouseout="return nd()" />
 <?php
 endwhile;
 ?>
